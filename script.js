@@ -40,3 +40,20 @@ function playRound(humanChoice, computerChoice) {
         return `You lose! ${computerChoice} beats ${humanChoice}.`;
     }
 }
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        alert(playRound(humanChoice, computerChoice));
+        alert(`Score: Human ${humanScore} - ${computerScore} Computer`);
+    }
+
+    if (humanScore > computerScore) {
+        alert("Congratulations! You are the overall winner");
+    } else if (humanScore < computerScore) {
+        alert("Better luck next time! The computer is the overall winner.")
+    } else {
+        alert("It's an overall tie!")
+    }
+}
